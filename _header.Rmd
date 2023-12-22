@@ -1,0 +1,86 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+```{r setDefaults,  include=TRUE, echo=FALSE, warning=FALSE, message=FALSE, error=FALSE, results='asis'}
+# Set code chunk options for all chunks
+# These can be overridden at the chunk level, but setting global options 
+# ensures consistency of chunk behaviour.
+# To print a version of this document without code set echo = FALSE. 
+#Include false will ignore the code chunk completely!
+knitr::opts_chunk$set(include = TRUE, 
+                      echo = FALSE, 
+                      warning=FALSE, 
+                      message=FALSE, 
+                      error=FALSE, 
+                      dev = c("pdf", "png"),
+                     # fig.width = 3,
+                    #  fig.height = 2,
+                     # fig.width = 3,
+                    out.width = '80%',
+                      fig.align = "center",
+                      results='asis')
+
+
+
+```
+
+```{r LoadLibraries, echo = FALSE}
+library(tidyverse) # Load all the Tidyverse packages 
+#in one go.
+library(kableExtra) # Enable advanced table styling
+library(qqplotr) # Enable QQ plots for statistical analysis
+library(readr) # Improved reading of text files
+library(timeDate) # Helper for time date manipulation
+library(rprojroot) # Useful utilities
+library(fs) # System independent file paths
+library(viridis)
+library(kableExtra)
+#library(trend)
+#library(TTR)
+library(ggplot2)
+library(sf)
+
+```
+
+```{r echo=FALSE}
+# Load functions from functions directory
+
+#absolute.path <- rprojroot::find_rstudio_root_file()
+
+function.path <- list.files(fs::path("functions"),  full.names = TRUE)
+
+for(file.r in function.path) {
+
+  source(file.r)
+}
+
+
+
+
+```
+
+```{r refreshCache, eval=FALSE}
+# Refresh the data cache
+
+refresh.data.cache()
+
+```
+
+
+```{r LoadDataSS, eval=FALSE }
+# Load data-ss
+path.to.data.ss <- fs::path("data-ss")
+
+VC55.weather.ss <- list.files(
+  path.to.data.ss,
+  pattern = ".rds", # Make a suitable filter. 
+  # Use the dot for a wildcard.
+  full.names = TRUE,
+  recursive = TRUE)  %>%
+  purrr::map_df(readRDS) 
+
+```
+
+

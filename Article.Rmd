@@ -1,0 +1,26 @@
+---
+title: "A nice new document"
+author: "someone clever"
+output:
+  pdf_document: default
+---
+
+
+```{r child = "_header.Rmd"}
+
+```
+
+# Insert text here
+
+A while ago....
+
+\newpage
+
+# Bibliography {.unnumbered}
+
+This short bibliography covers sources that helped to inspire this article.
+
+::: {#refs}
+:::
+
+\let\cleardoublepage\clearpage

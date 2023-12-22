@@ -1,0 +1,115 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+# Make the books
+
+## Resize jpegs
+
+```{r eval=FALSE}
+
+# Uncomment to Resize jpegs
+
+library(magick)
+
+# Read all jpeg files
+absolutePath <- getwd()
+# Create a path to the book versions
+path.to.jpeg.data <- fs::path(absolutePath,"_records")
+
+my.jpeg.files <- list.files(
+  absolutePath,
+  pattern = ".jp?g$", # Make a suitable filter.
+  full.names = TRUE,
+  recursive = TRUE)
+
+my.jpeg.info  <-  image_info( image_read(my.jpeg.files)) %>% as.data.frame()
+
+jpeg.rows.to.change <- which(my.jpeg.info$height > 1000 )
+
+jpeg.files.to.change <- my.jpeg.files[jpeg.rows.to.change]
+
+imagemagick.files <- image_read(jpeg.files.to.change)
+
+#imagemagick.files.resized <- image_resize(imagemagick.files, geometry_size_pixels(height = 1000))
+
+imagemagick.files.resized <- image_resize(imagemagick.files, "x1000")
+
+# Image write does not behave correctly as a vector
+if(length(jpeg.files.to.change) > 0) {
+     for (my.new.image in 1:length(jpeg.files.to.change)) {
+
+      image_write(
+     imagemagick.files.resized[my.new.image],
+      path = jpeg.files.to.change[my.new.image]
+    )
+    }
+
+}
+
+# image_write(
+#  imagemagick.files.resized,
+#   path = jpeg.files.to.change
+# )
+# 
+# # None to resize
+# 
+
+
+```
+
+## Render the book
+
+```{r}
+# Render book
+
+# Need to do this twice to make sure gitbook has the changes
+for (my.index in 1:3) {
+ 
+}
+
+rmarkdown::render("dissection-report.Rmd", "bookdown::pdf_book")
+#bookdown::render_book("index.Rmd", "bookdown::epub_book")
+# This last command imitates the pdf_document button
+
+rmarkdown::render_site(
+  output_format = 'pdf_document', 
+  encoding = 'UTF-8')
+
+
+```
+
+
+
+
+## Compress pdf files
+
+```{r}
+
+# Read all pdf files
+absolutePath <- getwd()
+# Create a path to the book versions
+path.to.book.data <- fs::path(absolutePath) 
+
+# my.pdf.book.files <- list.files(
+#   path.to.book.data,
+#   pattern = ".pdf$", # Make a suitable filter. Use the dot for a wildcard. note the use of the $ to match the files extension.
+#   full.names = TRUE,
+#   recursive = FALSE)
+
+# Add the report version if it is there
+my.pdf.report <- list.files(
+  absolutePath,
+  pattern = ".pdf$", # Make a suitable filter. Use the dot for a wildcard. note the use of the $ to match the files extension.
+  full.names = TRUE,
+  recursive = FALSE)
+
+my.pdf.files <- c(my.pdf.report )
+
+
+tools::compactPDF(my.pdf.files, qpdf = "qpdf", gs_cmd = "gs", gs_quality = "printer")
+#tools::compactPDF(my.pdf.files, qpdf = "qpdf", gs_cmd = "gs", gs_quality = "printer")
+
+```
+

@@ -1,0 +1,20 @@
+---
+title: "A nice presentation"
+author: Paul J. Palmer
+output: 
+  beamer_presentation:
+    theme: "AnnArbor"
+    colortheme: "dolphin"
+    fonttheme: "structurebold"
+    slide_level: 1
+    includes:
+          in_header: "preamble.tex" 
+    keep_tex:  true
+---
+```{r child = "_header.Rmd"}
+```
+
+
+# Introduction {-}
+
+-   The purpose of document is to provide visualisations 

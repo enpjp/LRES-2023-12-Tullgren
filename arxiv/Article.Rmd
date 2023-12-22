@@ -1,0 +1,183 @@
+---
+title: \myTitleMainTitle
+authors:
+  - name: Dr Paul J. Palmer
+    email: palmerpjp@gmail.com
+abstract: |
+  \myAbstract 
+bibliography: bibliography.bib
+biblio-style: unsrt
+nocite: '@*'
+output:
+  bookdown::pdf_book:
+    keep_tex: true
+    toc: false
+    latex_engine: xelatex
+    base_format: rticles::arxiv_article
+    extra_dependencies: ["endfloat,textcomp"]
+  bookdown::word_document2: default  # for cross-references
+---
+
+```{r child = "_header.Rmd"}
+
+```
+
+
+```{r LongTermRecordingStation, echo=FALSE, fig.cap="Position of Sutton Bonington in relation to VC55", message = FALSE}
+# This sets the area of focus for this report.
+
+path.to.map <- fs::path("data-ext","Leicestershire-3mile-region", ext = "shp")
+
+VC55.nice.map(path.to.map)
+
+
+```
+
+
+
+
+A while ago I was asked if it was possible to statistically link changes in Leicestershire flora and fauna to changes in climate. This is a very difficult question to answer as there are so many potential sources of influence to unpick, including factors unrelated to climate, such as pollution in all its many forms. However, we must first ask if there is evidence of changing climate in Leicestershire, and to answer this question we must find suitable data. We are fortunate in Leicestershire that there is a long term weather station at Sutton Bonington (just north of the VC55 boundary in Nottinghamshire; Figure \@ref(fig:LongTermRecordingStation)) which provides free access to 60 years of monthly weather observations as a text file @MetOfficeSBData2022. This data has allowed me to produce a series of graphics to represent variations in the local climate using carefully chosen colours. The eye is very good at picking up patterns using colour, so this has allowed me to avoid the use of statistics until the final summary where perhaps the reader will be ready for a few numbers to quantify the observations made about climate change.
+
+```{r Figure1Average, echo=FALSE, fig.cap="Average annual temperature deg C."}
+ 
+ gg.mean.temp.ribbon(VC55.weather.ss)
+```
+
+The ribbon plot in Figure \@ref(fig:Figure1Average) is very effective in conveying the warming trend in annual average temperature over the past sixty years. Notice that the progression is not smooth and continuous, but instead cold years can follow warm years. It is important to realise that the average (or mean, which is the same thing) temperature is really just a mathematical device to make a summary as a single number. If you were to dress for "average" annual temperature you would nearly always be too hot or cold as no day is ever a constant average day. The same is true for the flora and fauna of Leicestershire, so it is reasonable to wonder if the maximum and minimum temperatures are actually more important than the average in when trying to understand the impacts of weather.
+
+```{r Figure2MinMaxTempRibbon, fig.cap= "Maximum and minumum temperature."}
+gg.min.max.temp.ribbon(VC55.weather.ss)
+```
+
+So in Figure \@ref(fig:Figure2MinMaxTempRibbon) why does the warming trend not look so obvious? The answer is because the range of our measurement scale is almost double that of Figure \@ref(fig:Figure1Average) which halves the apparent change. The warming trend is actually small, so our choice of scale has an impact on our perception of its magnitude. There is a technique we can use to overcome this problem, but I shall save that for the end of this article. If we plot the two components of Figure \@ref(fig:Figure2MinMaxTempRibbon) using separate scales as in Figure \@ref(fig:Figure3MaxTempRibbon) and Figure \@ref(fig:Figure4MinTempRibbon) we can see the warming trend clearly again.
+
+```{r Figure3MaxTempRibbon, fig.cap= "Maximum recorded temperature."}
+gg.min.max.temp.ribbon(VC55.weather.ss, type = "tmax")
+
+
+```
+
+```{r Figure4MinTempRibbon, fig.cap= "Minimum recorded temperature."}
+gg.min.max.temp.ribbon(VC55.weather.ss, type = "tmin")
+
+```
+
+While maximum and minimum temperatures are important factors of our climate we are starting show that overall the magnitude of the trends are small in relation to natural variation in temperature. Another factor that can have great impact on wildlife are the number of days of air frost. It is well known amongst breeders of lepidoptera that some species need exposure to low temperatures to develop correctly and in a timely fashion, and gardeners know all too well the impact of untimely frosts and their impact on germination. In Figure \@ref(fig:Figure5AirFrostAbsolute) we can see a trend that suggests the number of air frost days in Leicestershire has halved over the past sixty years from eighty to forty.
+
+```{r Figure5AirFrostAbsolute, fig.cap="Number of air frost days."}
+  
+  gg.airfrost.ribbon(VC55.weather.ss)
+
+```
+
+```{r Figure6Rainfall, fig.cap="Total annual rainfall."}
+
+gg.rainfall.ribbon(VC55.weather.ss)
+
+```
+
+Enough about temperature, what about rainfall? Overall, total annual rainfall is increasing too, but again, there is great variability between years as can be seen in Figure \@ref(fig:Figure6Rainfall). The wettest years have both occurred in the past decade, but with only 401.9 mm in 2011, this was the driest year since 1960. This was followed by the second wettest year with 831.8 mm in 2012. (The wettest year was 2019 with 846.4 mm). As I have started quoting some numbers, now is the time to dive a little deeper and quantify some of the trends that we have been looking at.
+
+```{r Figure7AverageAnnualTemperature, fig.cap= " Average annual temperature trend."}
+# get rows with temperature
+
+trend.data <- temperature.trend(VC55.weather.ss)
+
+gg.average.annual.temp(VC55.weather.ss)
+
+
+
+
+```
+
+In Figure \@ref(fig:Figure7AverageAnnualTemperature) I have plotted a graph of average annual temperature for each year, and through that data drawn a "best fit" straight line. The slope of the line indicates that average temperature has been increasing by `r trend.data$slope` degrees per year, so over the past sixty years the average annual temperature in Leicestershire has increased by `r trend.data$sixty.years` degrees C.
+
+Earlier I mentioned that there was a technique that we could use to get around the problem of choice of units affecting our perception of scale when looking at trends. This is known as the "Z Score" and is calculated by subtracting the average from each value and dividing by the standard deviation, but don't worry about why this works, instead look at the result in Figure \@ref(fig:Figure8ZScoreCode). We are now able to plot all the measurements on a single scale where zero represents the average value. Rather than show all the points, a series of curves represent the trend of each measurement.
+
+```{r Figure8ZScoreCode, fig.cap= "Plotting trends with Z scores. Note that recording of the sun hours was discontinued in 2000."}
+
+gg.z.score(VC55.weather.ss)
+
+
+```
+
+Figure \@ref(fig:Figure8ZScoreCode) was actually the first exploratory graphic I produced and the clarity of the trends was a real shock as I never expected to see such a dramatic evidence of change. The ribbon plots were made later as a form of visual verification that Figure \@ref(fig:Figure8ZScoreCode) was correct. To interpret this figure in words and describe the changes in Leicestershire climate over the past sixty years:
+
+-   The number of air frost days per year are declining;
+-   Annual rainfall is increasing;
+-   Annual maximum temperature is rising, and;
+-   Annual minimum temperature is increasing at a faster rate than maximum temperature.
+
+If I now return to the question that I was originally asked: "Is it possible to statistically link changes in Leicestershire flora and fauna to changes in climate?"
+
+The answer has to be qualified in the light of the observations made here. While they are real, all the trends are much smaller than the year-to-year natural variability in Leicestershire weather. But just because they are small, that does not mean that they have no impact. So first we have to find changes in flora and fauna that might be linked to to weather, and we do not need to look far.
+
+The records from moth trapping show that many species are changing their flight times. In Figure \@ref(fig:Figure9GreenCarpet) we can see that Green Carpet *Colostygia pectinataria* has gone from a single generation to a much wider flight time with two peaks in abundance. There are similar changes in many species of Lepidoptera. Proving that these changes are linked to changing climate is not easy, but the correlation can be seen by anyone who plots the numbers. So, the answer to the question has to be: "Probably yes."
+
+```{r Figure9GreenCarpet, fig.cap="The changing phenology of Green Carpet \\emph{Colostygia pectinataria} in Leicestershire.(Data from Adrian Russell)." ,fig.show='hold'}
+
+# Load the data
+
+path.to.data <- fs::path("data-ext","VC55.Co.pec", ext = "rds")
+VC55.Co.pec <- readRDS(path.to.data)
+
+gg.phenology(VC55.Co.pec)
+
+image.to.include <- fs::path("images","green_carpet", ext = "jpg")
+set.dpi <- 700
+knitr::include_graphics(image.to.include, dpi = set.dpi )
+
+
+```
+
+# Expand With Time Series Analysis {-}
+
+```{r}
+
+# Set the data up
+  temperature.data.rows <- which(grepl("tmin.degC$",VC55.weather.ss$datumAttribute))
+  data.to.plot.tmin.deg <- VC55.weather.ss[temperature.data.rows,]
+tmin.deg.ts <- ts(data = data.to.plot.tmin.deg$datumValue, 
+               #   start = min(data.to.plot.tmin.deg$YYYYMMDD),
+               start = 1960,
+                #  end = max(data.to.plot.tmin.deg$YYYYMMDD),
+                  frequency = 12
+                  )
+  
+
+```
+
+
+```{r}
+data.to.plot.tmin.deg$smooth  <- SMA(tmin.deg.ts, n= 3)
+
+#plot.ts(data.to.plot.tmin.deg$smooth)
+
+ggplot(data=data.to.plot.tmin.deg) + geom_line(aes(x=YYYYMMDD, y = smooth))
+
+```
+
+```{r}
+trend.components <- decompose( tmin.deg.ts)
+
+plot(trend.components)
+```
+
+
+```{r}
+# Do a sens plot
+
+sens.slope(tmin.deg.ts, conf.level = 0.95)
+```
+
+
+\newpage
+
+# Bibliography {.unnumbered}
+
+This short bibliography covers sources that helped to inspire this article.
+
+::: {#refs}
+:::
+
+\let\cleardoublepage\clearpage
