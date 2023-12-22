@@ -29,14 +29,14 @@ knitr::opts_chunk$set(include = TRUE,
 ```{r LoadLibraries, echo = FALSE}
 library(tidyverse) # Load all the Tidyverse packages 
 #in one go.
-library(kableExtra) # Enable advanced table styling
+#library(kableExtra) # Enable advanced table styling
 library(qqplotr) # Enable QQ plots for statistical analysis
 library(readr) # Improved reading of text files
 library(timeDate) # Helper for time date manipulation
 library(rprojroot) # Useful utilities
 library(fs) # System independent file paths
 library(viridis)
-library(kableExtra)
+#(kableExtra)
 #library(trend)
 #library(TTR)
 library(ggplot2)

@@ -1,0 +1,42 @@
+---
+title: "Trying Out A Tullgren Funnel"
+author: "Paul J. Palmer"
+output:
+  bookdown::pdf_document2:
+    keep_tex:  true 
+    extra_dependencies: ["flafter"]
+    toc: false
+    number_sections: false  
+    includes:
+      
+      in_header: "preamble.tex"
+  bookdown::word_document2:
+    extra_dependencies: ["flafter"]
+    toc: false
+    number_sections: false  
+    includes:
+      in_header: "preamble.tex"
+      keep_tex:  true     
+---
+
+
+```{r child = "_header.Rmd"}
+
+```
+
+# Experiments with a Tullgren Funnel
+
+What I am calling a Tullgren Funnel is an apparatus for collecting micro-fauna from soil or leaf litter samples. The history hard to pin down, but the earliest mention seems to be from Antonio Berlese in 1905 and A. Tullgren in 1918. I have not been able to get hold of either source reference to read, but it appears that both Tullgren and Berlese are credited with inventing the same device. As hyphenating both names is a bit wordy, I'm going to stick with Tullgren Funnel for now.
+
+The general principal is the provision of a funnel with a fine mesh lid; a coarse mesh upon which the sample material is laid; a slippery funnel leading to a receptacle with a liquid preserving agent. A lamp to
+
+\newpage
+
+# Bibliography {.unnumbered}
+
+This short bibliography covers sources that helped to inspire this article.
+
+::: {#refs}
+:::
+
+\let\cleardoublepage\clearpage
