@@ -24,11 +24,11 @@ output:
 
 ```
 
-# Experiments with a Tullgren Funnel
+# Experiments with a Berlese Funnel
 
-What I am calling a Tullgren Funnel is an apparatus for collecting micro-fauna from soil or leaf litter samples. The history hard to pin down, but the earliest mention seems to be from Antonio Berlese in 1905 and A. Tullgren in 1918. I have not been able to get hold of either source reference to read, but it appears that both Tullgren and Berlese are credited with inventing the same device. As hyphenating both names is a bit wordy, I'm going to stick with Tullgren Funnel for now.
+Trying to figure out what to call a Berlese (or Tullgren) Funnel takes more time than describing what it does. It is an apparatus for collecting micro-fauna from soil or leaf litter samples. The history hard to pin down, but the earliest mention seems to be from Antonio Berlese in 1905 and A. Tullgren in 1918. I have not been able to get hold of either source reference to read, but it appears that both Berlese and Tullgren are credited with inventing the same device. As including both names with a hyphen is a bit wordy, I'm going to stick with Berlese Funnel for now.
 
-The general principal is the provision of a funnel with a fine mesh lid; a coarse mesh upon which the sample material is laid; a slippery funnel leading to a receptacle with a liquid preserving agent. A lamp to
+The general principal is the provision of a funnel with a fine mesh lid; a coarse mesh upon which the sample material is laid; a slippery funnel leading to a receptacle with a liquid preserving agent. A lamp to warm and dry the sample is an optional extra
 
 \newpage
 
