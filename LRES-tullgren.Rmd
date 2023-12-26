@@ -26,9 +26,9 @@ output:
 
 # Experiments with a Berlese Funnel
 
-Trying to figure out what to call a Berlese (or Tullgren) Funnel takes more time than describing what it does. It is an apparatus for collecting micro-fauna from soil or leaf litter samples. The history hard to pin down, but the earliest mention seems to be from Antonio Berlese in 1905 and A. Tullgren in 1918. I have not been able to get hold of either source reference to read, but it appears that both Berlese and Tullgren are credited with inventing the same device. As including both names with a hyphen is a bit wordy, I'm going to stick with Berlese Funnel for now.
+Trying to figure out what to call a Berlese (or Tullgren) Funnel takes more time than describing what it does. It is an apparatus for collecting microfauna from soil or leaf litter samples. The history is hard to pin down, but the earliest mention seems to be from Antonio Berlese in 1905 and A. Tullgren in 1918. It appears that Berlese was the first to describe the apparatus, using a water bath as a heater, and Tullgren simplified the overall arrangement by using an electric lamp as a source of heat. I'm going to stick with "Berlese Funnel" for now.
 
-The general principal is the provision of a funnel with a fine mesh lid; a coarse mesh upon which the sample material is laid; a slippery funnel leading to a receptacle with a liquid preserving agent. A lamp to warm and dry the sample is an optional extra
+The general principle involves providing a funnel with a fine-mesh lid, a coarse mesh upon which the sample material is laid, and a slippery funnel leading to a receptacle with a liquid preserving agent. The use of a lamp to warm and dry the sample is an optional extra in these days of high energy costs, especially if you keep the apparatus in a warm, dry place.
 
 \newpage
 
