@@ -39,7 +39,20 @@ get.image.for.report("BerleseFunnel.jpg")
 
 For my experimental trial, all the material came from locations on the nature reserve at Rutland Water: So what did I find? 
 
-My favourite and a personal first was the Pseudoscorpion *Chthonius ischnocheles* (Common Chthonid) Figure \@ref(fig:ChthoniusIschnocheles). It turned out that the keys to woodlice are quite easy to use so Figures \@ref(fig:TrichoniscusPusillus) and \@ref(fig:PhilosciaMuscorum) show the common woodlice \textit{Trichoniscus pusillus} and \textit{Philoscia muscorum}
+My favourite and a personal first was the Pseudoscorpion *Chthonius ischnocheles* (Common Chthonid) Figure \@ref(fig:ChthoniusIschnocheles). It turned out that the keys to woodlice are quite easy to use so Figures \@ref(fig:TrichoniscusPusillus) and \@ref(fig:PhilosciaMuscorum) show the common woodlice \textit{Trichoniscus pusillus} Ag. and \textit{Philoscia muscorum}. All the by-catch was separated and logged.
+
+
+Oxypselaphus obscurus X2
+Agonum fuliginosum X3
+Anotylus rugosus X2
+Stenolophus mixtus X1
+Acupalpus dubius X1
+Octhebius pusillus X1 - just 1 previous record 1936 (STET Ochthebius pusillus)
+Dacrila fallax X1 - 3 previous records, last Rutland Water 2021
+Habrocerus capillaricornis X1
+Lathrobium brunnipes X1
+
+After this encouraging start I shall be expanding 
 
 
 ```{r ChthoniusIschnocheles, fig.cap= " \\textit{Chthonius ischnocheles} Common Chthonid  " }
@@ -48,7 +61,7 @@ get.image.for.report("ChthoniusIschnocheles.jpg")
 
 ```
 
-```{r TrichoniscusPusillus, fig.cap="  \\textit{Trichoniscus pusillus} Common Pygmy Woodlouse"}
+```{r TrichoniscusPusillus, fig.cap="  \\textit{Trichoniscus pusillus} Ag. Common Pygmy Woodlouse"}
 
 get.image.for.report("TrichoniscusPusillus.jpg")
 
