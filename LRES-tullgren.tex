@@ -109,6 +109,20 @@
 % Put multiple figures per page
 %\renewcommand{\efloatseparator}{\mbox{}}
 \usepackage{flafter}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+\usepackage{xcolor}
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
@@ -130,74 +144,48 @@
 
 Trying to figure out what to call a Berlese (or Tullgren) Funnel takes more time than describing what it does. It is an apparatus for collecting microfauna from soil or leaf litter samples. The history is hard to pin down, but the earliest mention seems to be from Berlese (1905) and Tullgren (1917). It appears that Berlese was the first to describe the apparatus, using a water bath as a heater. Tullgren later simplified the overall arrangement by substituting an electric lamp as a source of heat. For now, I'm going to stick with ``Berlese Funnel.''
 
-The general principle involves providing a funnel with a fine-mesh lid, an inner coarse mesh upon which the sample material is laid, and a slippery funnel leading to a receptacle with a liquid preserving agent. The use of a lamp to warm and dry the sample is an optional extra in these days of high energy costs, especially if you keep the apparatus in a warm, dry place. In my setup, I placed the apparatus in the greenhouse with a small lamp to dry the material (See Figure Figure \ref{fig:BerleseFunnel}) and a tube filled with 100\% Mono Propylene Glycol (MPG) to catch the microfauna. I'm a fan of MPG as it is a good preservative, slow to evaporate, non-toxic, preserves colors, and keeps specimens fairly supple. I found that most of the catch appeared after three days, and little ever appeared after a week.
+The general principle involves providing a funnel with a fine-mesh lid, an inner coarse mesh upon which the sample material is laid, and a slippery funnel leading to a receptacle with a liquid preserving agent. The use of a lamp to warm and dry the sample is an optional extra in these days of high energy costs, especially if you keep the apparatus in a warm, dry place. In my setup, I placed the apparatus in the greenhouse with a small lamp to dry the material (See Figure Figure \ref{fig:BerleseFunnel}) and a tube filled with 100\% Mono Propylene Glycol (MPG) to catch the microfauna. I'm a fan of MPG as it is a good preservative, slow to evaporate, non-toxic, preserves colours, and keeps specimens fairly supple. I found that most of the catch appeared after three days, and little ever appeared after a week.
 
 For my experimental trial, all the material came from locations on the nature reserve at Rutland Water: So what did I find?
 
-My favourite and a personal first was the Pseudoscorpion \emph{Chthonius ischnocheles} (Common Chthonid) Figure \ref{fig:ChthoniusIschnocheles}. It turned out that the keys to woodlice are quite easy to use so Figures \ref{fig:TrichoniscusPusillus} and \ref{fig:PhilosciaMuscorum} show the common woodlice \textit{Trichoniscus pusillus} Ag. and \textit{Philoscia muscorum}. All the by-catch was separated and logged and thanks to Graham Finch I have a list of the beetles too. Of note were \emph{Ochthebius pusillus} with just one previous record in 1936, and \emph{Dacrila fallax} with just three previous records, with the last Rutland Water record in 2021. The current list of species recorder is in Table 1.
+My favourite and a personal first was the Pseudoscorpion \emph{Chthonius ischnocheles} (Common Chthonid) Figure \ref{fig:ChthoniusIschnocheles}. It turned out that the keys to woodlice are quite easy to use so Figures \ref{fig:TrichoniscusPusillus} and \ref{fig:PhilosciaMuscorum} show the common woodlice \textit{Trichoniscus pusillus} Ag. and \textit{Philoscia muscorum}. All the by-catch was separated and logged and thanks to Graham Finch I have a list of the beetles too. Of note were \emph{Ochthebius pusillus} with just one previous record in 1936, and \emph{Dacrila fallax} with just three previous records, with the last Rutland Water record in 2021. The current list of species recorded is in Table \ref{tab:myTable}.
 
 After this encouraging start I shall be expanding use of the Berlese Funnel in 2024.
 
 \newpage
 \begingroup\fontsize{7}{9}\selectfont
 
-\begin{longtable}[t]{lrr}
-\caption{Species recorded by family.}\\
+\begin{longtable}[t]{llll}
+\caption{\label{tab:myTable}Summary of taxa recorded.}\\
 \toprule
-taxon & Count & FamilyCount\\
+Order & Family & Taxon & Common Name\\
 \midrule
 \endfirsthead
-\caption[]{Species recorded by family. \textit{(continued)}}\\
+\caption[]{\label{tab:myTable}Summary of taxa recorded. \textit{(continued)}}\\
 \toprule
-taxon & Count & FamilyCount\\
+Order & Family & Taxon & Common Name\\
 \midrule
 \endhead
 
 \endfoot
 \bottomrule
 \endlastfoot
-\addlinespace[0.3em]
-\multicolumn{3}{l}{\textbf{Carabidae}}\\
-\hspace{1em}Acupalpus dubius & 1 & \\
-\hspace{1em}Agonum fuliginosum & 1 & \\
-\hspace{1em}Oxypselaphus obscurus & 1 & \\
-\hspace{1em}Stenolophus mixtus & 1 & \\
-\hspace{1em}Number of records for this family: &  & \vphantom{1} 4\\
-\addlinespace[0.3em]
-\multicolumn{3}{l}{\textbf{Staphylinoidea}}\\
-\hspace{1em}Dacrila fallax & 1 & \\
-\hspace{1em}Habrocerus capillaricornis & 1 & \\
-\hspace{1em}Lathrobium brunnipes & 1 & \\
-\hspace{1em}Ochthebius pusillus & 1 & \\
-\hspace{1em}Number of records for this family: &  & 4\\
-\addlinespace[0.3em]
-\multicolumn{3}{l}{\textbf{Trichoniscidae}}\\
-\hspace{1em}Trichoniscus pusillus & 3 & \\
-\hspace{1em}Number of records for this family: &  & 3\\
-\addlinespace[0.3em]
-\multicolumn{3}{l}{\textbf{Chthoniidae}}\\
-\hspace{1em}Chthonius ischnocheles & 1 & \\
-\hspace{1em}Number of records for this family: &  & \vphantom{5} 1\\
-\addlinespace[0.3em]
-\multicolumn{3}{l}{\textbf{Coccinea}}\\
-\hspace{1em}Unknown & 1 & \\
-\hspace{1em}Number of records for this family: &  & \vphantom{4} 1\\
-\addlinespace[0.3em]
-\multicolumn{3}{l}{\textbf{Linyphiidae}}\\
-\hspace{1em}Tenuiphantes tenuis & 1 & \\
-\hspace{1em}Number of records for this family: &  & \vphantom{3} 1\\
-\addlinespace[0.3em]
-\multicolumn{3}{l}{\textbf{Philoscia}}\\
-\hspace{1em}Philoscia muscorum & 1 \vphantom{1} & \\
-\hspace{1em}Number of records for this family: &  & \vphantom{2} 1\\
-\addlinespace[0.3em]
-\multicolumn{3}{l}{\textbf{Philosciidae}}\\
-\hspace{1em}Philoscia muscorum & 1 & \\
-\hspace{1em}Number of records for this family: &  & \vphantom{1} 1\\
-\addlinespace[0.3em]
-\multicolumn{3}{l}{\textbf{Staphylinidae}}\\
-\hspace{1em}Anotylus rugosus & 1 & \\
-\hspace{1em}Number of records for this family: &  & 1\\*
+Araneae & Linyphiidae & Tenuiphantes tenuis & Money Spider\\
+Coleoptera & Carabidae & Acupalpus dubius & \\
+ &  & Agonum fuliginosum & \\
+ &  & Oxypselaphus obscurus & \\
+ &  & Stenolophus mixtus & \\
+\addlinespace
+ & Staphylinidae & Anotylus rugosus & \\
+ &  & Dacrila fallax & \\
+ &  & Habrocerus capillaricornis & \\
+ &  & Lathrobium brunnipes & \\
+ &  & Ochthebius pusillus & \\
+\addlinespace
+Isopoda & Coccinea & Unknown & Scale Insect\\
+ & Philosciidae & Philoscia muscorum & Common Striped Woodlouse\\
+ & Trichoniscidae & Trichoniscus pusillus Ag. & Common Pygmy Woodlouse\\
+Pseudoscorpione & Chthoniidae & Chthonius ischnocheles & Common Chthonid\\*
 \end{longtable}
 \endgroup{}
 

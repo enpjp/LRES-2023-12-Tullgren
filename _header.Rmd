@@ -36,7 +36,7 @@ library(timeDate) # Helper for time date manipulation
 library(rprojroot) # Useful utilities
 library(fs) # System independent file paths
 library(viridis)
-#(kableExtra)
+library(kableExtra)
 #library(trend)
 #library(TTR)
 library(ggplot2)
@@ -91,17 +91,17 @@ RData.path <- fs::path(path.to.cache, "my.cache", ext ="RData")
 ```
 
 
-```{r LoadDataSS, eval=FALSE }
+```{r LoadDataSS, eval=TRUE }
 # Load data-ss
 path.to.data.ss <- fs::path("data-ss")
 
-VC55.weather.ss <- list.files(
+my.data.ss <- list.files(
   path.to.data.ss,
   pattern = ".rds", # Make a suitable filter. 
   # Use the dot for a wildcard.
   full.names = TRUE,
   recursive = TRUE)  %>%
-  purrr::map_df(readRDS) 
+  readRDS
 
 ```
 
