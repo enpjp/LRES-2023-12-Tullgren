@@ -30,6 +30,20 @@ Trying to figure out what to call a Berlese (or Tullgren) Funnel takes more time
 
 The general principle involves providing a funnel with a fine-mesh lid, an inner coarse mesh upon which the sample material is laid, and a slippery funnel leading to a receptacle with a liquid preserving agent. The use of a lamp to warm and dry the sample is an optional extra in these days of high energy costs, especially if you keep the apparatus in a warm, dry place. Mine was set up in the greenhouse with a small lamp to dry the material (See Figure \@ref(fig:BerleseFunnel)) and a tube filled with 100% Mono Propylene Glycol (MPG) to catch the microfauna. I'm a fan of MPG as it is a good preservative, slow to evaporate, non toxic, preserves colours, and keeps specimens fairly supple. I found that most of the catch appeared after three days and little ever appeared after a week.
 
+
+For my experimental trial, all the material came from locations on the nature reserve at Rutland Water: So what did I find? 
+
+My favourite and a personal first was the Pseudoscorpion *Chthonius ischnocheles* (Common Chthonid) Figure \@ref(fig:ChthoniusIschnocheles). It turned out that the keys to woodlice are quite easy to use so Figures \@ref(fig:TrichoniscusPusillus) and \@ref(fig:PhilosciaMuscorum) show the common woodlice \textit{Trichoniscus pusillus} Ag. and \textit{Philoscia muscorum}. All the by-catch was separated and logged and thanks to Graham Finch I have a list of the beetles too. Of note were *Ochthebius pusillus* with just one previous record in 1936, and *Dacrila fallax* with just three previous records, with the last Rutland Water record in 2021. The current list is in Table 1.
+
+After this encouraging start I shall be expanding use of the Berlese Funnel in 2024.
+
+\newpage
+```{r myTable}
+my.table
+```
+
+
+\newpage
 ```{r BerleseFunnel, fig.cap= "Berlese Funnel set up in the greenhouse."}
 
 get.image.for.report("BerleseFunnel.jpg")
@@ -37,22 +51,6 @@ get.image.for.report("BerleseFunnel.jpg")
 
 ```
 
-For my experimental trial, all the material came from locations on the nature reserve at Rutland Water: So what did I find? 
-
-My favourite and a personal first was the Pseudoscorpion *Chthonius ischnocheles* (Common Chthonid) Figure \@ref(fig:ChthoniusIschnocheles). It turned out that the keys to woodlice are quite easy to use so Figures \@ref(fig:TrichoniscusPusillus) and \@ref(fig:PhilosciaMuscorum) show the common woodlice \textit{Trichoniscus pusillus} Ag. and \textit{Philoscia muscorum}. All the by-catch was separated and logged.
-
-
-Oxypselaphus obscurus X2
-Agonum fuliginosum X3
-Anotylus rugosus X2
-Stenolophus mixtus X1
-Acupalpus dubius X1
-Octhebius pusillus X1 - just 1 previous record 1936 (STET Ochthebius pusillus)
-Dacrila fallax X1 - 3 previous records, last Rutland Water 2021
-Habrocerus capillaricornis X1
-Lathrobium brunnipes X1
-
-After this encouraging start I shall be expanding 
 
 
 ```{r ChthoniusIschnocheles, fig.cap= " \\textit{Chthonius ischnocheles} Common Chthonid  " }

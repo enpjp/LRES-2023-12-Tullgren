@@ -64,7 +64,29 @@ for(file.r in function.path) {
 ```{r refreshCache, eval=FALSE}
 # Refresh the data cache
 
-refresh.data.cache()
+path.to.cache <- fs::path(absolute.path, "data.cache")
+RData.path <- fs::path(path.to.cache, "my.cache", ext ="RData")
+
+dir.create(path.to.cache)
+
+  save( my.table,
+        
+        file = RData.path
+  )
+
+```
+
+
+
+```{r eval=TRUE}
+
+path.to.cache <- fs::path("data.cache")
+RData.path <- fs::path(path.to.cache, "my.cache", ext ="RData")
+
+ load( 
+        
+        file = RData.path
+  )
 
 ```
 
