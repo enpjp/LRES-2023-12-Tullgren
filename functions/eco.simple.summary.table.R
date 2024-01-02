@@ -26,6 +26,11 @@ eco.simple.summary.table <- function(path.to.data.ss) {
   # Nice column names
   
   colnames( my.species.present) <- c("Order","Family","Taxon", "Common Name")
+  
+  readr::write_delim(my.species.present,
+                    "table_copy.csv",
+                    delim = ",",
+                    quote = "all")
  
  my.table <- knitr::kable( my.species.present, caption = 'Summary of taxa recorded.',
               booktabs = TRUE,
